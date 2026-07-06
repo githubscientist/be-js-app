@@ -1,12 +1,22 @@
-import { createServer } from 'node:http';
-// const { createServer } = require('node:http');
+// create a http server and run it
+// 1. import the http module
+const http = require('http');
 
-const server = createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World!\n');
+// 2. create a server instance
+// whenever we receive a http request, the request listener is executed
+const server = http.createServer((request, response) => {
+  response.write('Hello World!');
+  response.end();
 });
 
-// starts a simple http server locally on port 3000
-server.listen(3000, '127.0.0.1', () => {
-  console.log('Listening on 127.0.0.1:3000');
-});
+// 3. start the server or listen to http requests
+server
+  .listen(3001, 'localhost', (error) => {
+    if (error) {
+      console.log('Failed to start the server');
+      console.log(error);
+      return; // exit the function on error
+    }
+
+    console.log(`Server is running at http://localhost:3001`);
+  });
