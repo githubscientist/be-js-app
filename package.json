@@ -1,0 +1,32 @@
+{
+  "name": "be-js-app",
+  "version": "1.0.0",
+  "description": "Backend application for fsdcwdeb5960 using NodeJS",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "mysql",
+    "react"
+  ],
+  "homepage": "https://github.com/githubscientist/be-js-app#readme",
+  "bugs": {
+    "url": "https://github.com/githubscientist/be-js-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubscientist/be-js-app.git"
+  },
+  "license": "ISC",
+  "author": "Sathish Gnanaprakasam",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

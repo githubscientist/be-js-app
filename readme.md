@@ -3,8 +3,9 @@
 ## Topics
 
 [x] Node.js Runtime & Architecture
-[ ] Core Modules: fs, path, http
-[ ] Creating a basic HTTP server
+[x] Core Modules: fs, path, http --path, fs is pending
+[x] Creating a basic HTTP server
+[x] Third Party Modules: nodemon
 
 ## Node.js Runtime & Architecture
 
@@ -39,7 +40,38 @@
     git commit -m "Initial commit"
     git push -u origin main
     ```
-- 
+- Setup a http server using the http module.
+    - Create a new file named `server.js` in the root of your project folder.
+    - Add the following code to `server.js` to create a basic HTTP server:
+    ```javascript
+    // 1. import the http module
+        const http = require('http');
+
+        // 2. create a server instance
+        // whenever we receive a http request, the request listener is executed
+        const server = http.createServer((request, response) => {
+        response.writeHead(200, {
+            'content-type': 'application/json'
+        });
+
+        response.write(JSON.stringify({ "message": "Hello World!" }));
+        response.end();
+        });
+
+        // 3. start the server or listen to http requests
+        server
+        .listen(3001, 'localhost', (error) => {
+            if (error) {
+            console.log('Failed to start the server');
+            console.log(error);
+            return;
+            }
+
+            console.log(`Server is running at http://localhost:3001`);
+        });
+        ```
+- Setup npm in your project folder.
+    
 
 ### Module Types in JavaScript
 
